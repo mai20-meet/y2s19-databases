@@ -14,4 +14,16 @@ class Knowledge(Base):
 	# topic of the article. The last column will be
 	# an integer, representing your rating of the article.
 
-	pass
+   __tablename__ = 'Wiki'
+   wiki_id = Column(Integer, primary_key=True)
+   name = Column(String)
+   topic = Column(String)
+   rate = Column(Integer)
+
+   def __repr__(self):
+       return ("Student Name: {}\n"
+               "Student rate: {} \n"
+               "topic: {}").format(
+                    self.name, self.rate, self.topic)
+s = Knowledge (name = "Nathan", topic = "music", rate = 8)
+print(s)
